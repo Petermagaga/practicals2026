@@ -1,0 +1,5 @@
+website: amzonemail: |Ptrmagaga@gmail| password:12345678
+website: mortalemail: |Ptrmagaga@gmail| password:password
+website: vemail: |Ptrmagaga@gmail| password:v
+website: webemail: |Ptrmagaga@gmail| password:sdda
+website: semail: |Ptrmagaga@gmail| password:d
