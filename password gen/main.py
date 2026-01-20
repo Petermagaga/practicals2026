@@ -1,7 +1,7 @@
 import random
 import tkinter
 from tkinter import  messagebox
-import py
+
 from urllib3.filepost import writer
 
 PASSWORD=[]
