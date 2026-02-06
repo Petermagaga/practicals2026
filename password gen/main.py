@@ -4,8 +4,7 @@ from tkinter import  messagebox
 
 from urllib3.filepost import writer
 
-PASSWORD=[]
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+PASSWORD=[]# ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def password_generator():
 
     letter=("A","B","C","D","e","f","g")
