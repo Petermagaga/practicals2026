@@ -1,7 +1,7 @@
 import random
 import tkinter
 from tkinter import  messagebox
-
+import  json
 from urllib3.filepost import writer
 
 PASSWORD=[]# ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -21,19 +21,35 @@ def password_generator():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
-    with open("data.txt","a") as datafile:
+
         website_=website_entry.get()
         email_=email_input.get()
         password=password_entry.get()
+
+        new_data={
+            website_:{
+                "email":email_,
+                "password":password,
+            }
+        }
 
         if len(website_)==0 or len(email_)==0 or len(password)==0:
             messagebox.showinfo(title="oops",message="Please dont leave any fields empty")
 
         else:
-            is_okay=messagebox.askyesnocancel(title="confirm if is right",message=f"These are the details entered: \n website: {website_},\n"
-                                                                          f"email: {email_},\nPassword: {password}\n id it ok to save? ")
-            if is_okay:
-                datafile.write(f"website: {website_}email: |{email_}| password:{password}\n")
+            try:
+                with open("data.json","r") as datafile:
+                    #updating old data with new data
+
+            except FileNotFoundError:
+                with open("data.json","w") as datafile:
+
+            else:
+                data = json.load(datafile)
+                # saving updated data
+                data.update(new_data)
+                json.dump(data,datafile,indent=4)
+            finally:
                 website_entry.delete(0,tkinter.END)
                 password_entry.delete(0,tkinter.END)
 
