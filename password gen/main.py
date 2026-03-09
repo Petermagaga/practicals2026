@@ -39,8 +39,7 @@ def save():
         else:
             try:
                 with open("data.json","r") as datafile:
-                    #updating old data with new data
-
+                    pass
             except FileNotFoundError:
                 with open("data.json","w") as datafile:
 
